@@ -1,45 +1,70 @@
-import { NuxtAxiosInstance } from "vrwebdesign-nuxt/modules/nuxt-axios/types";
+import { NuxtAxiosInstance } from 'vrwebdesign-nuxt/modules/nuxt-axios/types';
 // import { INav } from '~/models/Navigation'
 export default class NavigationService {
   constructor(public $axios: NuxtAxiosInstance) {}
   get(): any[] {
     return [
       {
-        icon: "apps",
-        title: "دشبورد",
-        to: "/"
+        icon: 'apps',
+        title: 'دشبورد',
+        to: '/',
       },
       {
-        icon: "list",
-        title: "لیست معمولی",
-        to: "/list"
+        icon: 'la-chart-bar',
+        title: 'چارت ها',
+        to: '/charts',
       },
       {
-        icon: "la-clipboard-list",
-        title: "لیست با حالت دیالوگ",
-        to: "/dialog_list"
+        icon: 'la-server',
+        title: 'دیتاگرید',
+        to: '/list',
       },
       {
-        icon: "list",
-        title: "لیست با زیر منو",
+        icon: 'la-align-right',
+        title: 'فرم',
+        to: '/form',
+      },
+      {
+        icon: 'la-envelope-square',
+        title: 'نوتیفیکیشن/دیالوگ ',
+        to: '/dialogs',
+      },
+      {
+        icon: 'la-calendar',
+        title: 'دیت پیکر',
+        to: '/date_pickers',
+      },
+      {
+        icon: 'la-file-upload',
+        title: 'اپلود فایل',
+        to: '/file_upload',
+      },
+      // {
+      //   icon: 'la-filter',
+      //   title: 'گلوبال',
+      //   to: '/global',
+      // },
+      {
+        icon: 'la-exclamation-triangle',
+        title: 'ارور ها',
         child: [
           {
-            icon: "la-list-alt",
-            title: "لیست1",
-            to: "/"
+            icon: 'la-exclamation',
+            title: '404',
+            to: '/errors/error404',
           },
           {
-            icon: "la-list-alt",
-            title: "لیست2",
-            to: "/list"
-          }
-        ]
-      }
+            icon: 'la-exclamation',
+            title: '550',
+            to: '/errors/error550',
+          },
+        ],
+      },
     ];
   }
 }
 
-declare module "vue/types/vue" {
+declare module 'vue/types/vue' {
   interface NuxtServiceInstance {
     navigation: NavigationService;
   }

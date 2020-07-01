@@ -1,4 +1,3 @@
-
 <style lang="scss" scoped>
 .v-toolbar__title {
   margin-left: 0;
@@ -76,27 +75,27 @@
   </section>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import appNavigation from "./navigation.vue";
+import Vue from 'vue';
+import appNavigation from './navigation.vue';
 export default Vue.extend({
   components: {
-    appNavigation
+    appNavigation,
   },
   data() {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
+      // fixed: false,
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "Vuetify.js"
+      title: 'Vuetify.js',
     };
   },
   methods: {
     logout() {
-      this.$router.push("/auth");
-    }
-  }
+      this.$router.push('/auth');
+    },
+  },
 });
 </script>
